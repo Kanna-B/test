@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+<title>calculator</title>
+<style>
+body{background-color: black;}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance: none;
+	  	 -moz-appearance: none;
+		 appearance: none;
+		 }
+		 
+input{
+  background-color: yellowgreen;
+  text-align: center;
+  border-color: silver;
+  border-radius: 40px;
+  display: flex;
+  align-content: center;
+  font-size: 4rem;
+  margin: auto;
+  margin-top: 20px;
+}
+#input1{
+  margin-top: 50px;
+}
+button{
+  background-color: skyblue;
+  text-align: center;
+  border-color: salmon;
+  border-radius: 5px;
+  display: flex;
+  font-size: 4rem;
+  text-transform: capitalize;
+  margin: auto;
+}
+p{
+  text-align: center;
+  font-size: 5rem;
+}
+
+</style>
+</head>
+<body>
+<input type="number" id="input1" placeholder="enter number" />
+<input type="number" id="input2" placeholder="enter number"/><br><br>
+<button onclick="calc();">add</button><br><br>
+<button onclick="calc1();">sub</button><br><br>
+<button onclick="calc2();">multiple</button><br><br>
+<button onclick="calc3()">division</button>
+
+<p id="result" style = "color: white;"></p>
+<script>
+
+'use strict';
+function value(){
+  let a = document.getElementById("input1").value
+  let b = document.getElementById("input2").value
+ 
+  return {a: Number(a), b: Number(b)};
+}
+
+function calc () {
+  let {a,b}= value();
+ document.getElementById('result').innerHTML = a+b;
+}
+
+function calc1(){
+  let inputs =value();
+ return document.getElementById("result").innerHTML=inputs.a-inputs.b;
+}
+
+function calc2(){
+  let {a,b}=value();
+ return document.getElementById("result").innerHTML=a*b;
+}
+const calc3=function(){
+  let {a,b}=value()
+ return document.getElementById("result").innerHTML=a/b;
+}
+
+</script>
+</body>
+</html>
